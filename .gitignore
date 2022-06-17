@@ -1,0 +1,6 @@
+.idea/
+local.log
+dev.log
+prod.log
+rem
+vendor/

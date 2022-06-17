@@ -1,0 +1,66 @@
+env = "prod"
+
+[es]
+    addrs = ["http://10.20.18.131:9202", "http://10.20.18.133:9202", "http://10.20.18.79:9202"]
+
+[redis]
+    [redis.master]
+        host = "10.20.18.33"
+        port = 7001
+        password = ""
+        database = 0
+    [redis.activity]
+        host = "10.20.23.101"
+        port = 7701
+        password = "1HjVagJ#ngZldLNj"
+        database = 0
+
+[mysql]
+    [mysql.master]
+        name = "rem"
+        port = 10126
+        host = "10.20.23.41"
+        user = "rem"
+        password = "RC6qCVhLj3XF69qA"
+        charset = "utf8mb4"
+        maxIdleConnection = 100
+        maxOpenConnection = 100
+        connMaxLifetime = 30
+    [mysql.slave]
+        name = "rem"
+        port = 10126
+        host = "10.20.23.42"
+        user = "rem"
+        password = "RC6qCVhLj3XF69qA"
+        charset = "utf8mb4"
+        maxIdleConnection = 100
+        maxOpenConnection = 100
+        connMaxLifetime = 30
+    [mysql.s_master]
+        name = "rem_statistics"
+        port = 10126
+        host = "10.20.23.41"
+        user = "rem"
+        password = "RC6qCVhLj3XF69qA"
+        charset = "utf8mb4"
+        maxIdleConnection = 100
+        maxOpenConnection = 100
+        connMaxLifetime = 30
+    [mysql.s_slave]
+        name = "rem_statistics"
+        port = 10126
+        host = "10.20.23.42"
+        user = "rem"
+        password = "RC6qCVhLj3XF69qA"
+        charset = "utf8mb4"
+        maxIdleConnection = 100
+        maxOpenConnection = 100
+        connMaxLifetime = 30
+
+[mongodb]
+    uri = "mongodb://rem:up5R=Azq@10.20.23.180:27029,10.20.23.181:27029,10.20.23.182:27029/rem"
+    replicaSet = "jiakaotong"
+    readPreference = 2
+
+[logger]
+    file = "/data/logs/service/lkapi/rem_cli.log"

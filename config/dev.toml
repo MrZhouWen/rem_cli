@@ -1,0 +1,66 @@
+env = "dev"
+
+[es]
+    addrs = ["http://127.0.0.1:9254"]
+
+[redis]
+    [redis.master]
+        host = "192.168.255.38"
+        port = 6387
+        password = ""
+        database = 0
+    [redis.activity]
+        host = "192.168.255.38"
+        port = 6387
+        password = ""
+        database = 0
+
+[mysql]
+    [mysql.master]
+        name = "rem"
+        port = 3311
+        host = "192.168.255.38"
+        user = "root"
+        password = "iaduu3Yi"
+        charset = "utf8mb4"
+        maxIdleConnection = 100
+        maxOpenConnection = 100
+        connMaxLifetime = 30
+    [mysql.slave]
+        name = "rem"
+        port = 3311
+        host = "192.168.255.38"
+        user = "root"
+        password =  "iaduu3Yi"
+        charset = "utf8mb4"
+        maxIdleConnection = 100
+        maxOpenConnection = 100
+        connMaxLifetime = 30
+    [mysql.s_master]
+        name = "rem_statistics"
+        port = 3311
+        host = "192.168.255.38"
+        user = "root"
+        password = "iaduu3Yi"
+        charset = "utf8mb4"
+        maxIdleConnection = 100
+        maxOpenConnection = 100
+        connMaxLifetime = 30
+    [mysql.s_slave]
+        name = "rem_statistics"
+        port = 3311
+        host = "192.168.255.38"
+        user = "root"
+        password = "iaduu3Yi"
+        charset = "utf8mb4"
+        maxIdleConnection = 100
+        maxOpenConnection = 100
+        connMaxLifetime = 30
+
+[mongodb]
+    uri = "mongodb://rem_test:rem_test@192.168.255.38:27029,192.168.255.38:27030/rem"
+    replicaSet = "jiakaotong_test"
+    readPreference = 2
+
+[logger]
+    file = "./dev.log"
